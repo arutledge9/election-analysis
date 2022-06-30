@@ -11,26 +11,32 @@ I have been working with Tom and his manager, Seth, to audit the results from an
 
 Tom, Seth, and I presented the following election outcomes to the commission:
 
-B1. 369,711 votes were cast in this election. The following images illustrate the code initializing and incrementing the total vote counts. This total vote count variable was instrumental in performing the subsequent audit calculations.   [TVOTES images]
+- 369,711 votes were cast in this election. The following images illustrate the code initializing and incrementing the total vote counts. This total vote count variable was instrumental in performing the subsequent audit calculations.   
 
-Additionally, for the subsequent candidate and county variables, it’s probably most logical to include their variable initialization here as a reference:    [cand_county IMAGES]
+    ![](Resources/tvotes_init.png)
+    ![](Resources/tvotes_increment.png)
 
+  And while they were shown in the first image pointing out our Total Votes being initialized, it’s probably most logical to highlight the county and candidate   variable initialization here as a reference:    
 
-As well as the county and candidate vote incrementing: 
+   ![](Resources/cand_county_variables.png)
+   
+   There are an enormous amount of things happening and taking shape with all of these variables! First we have a list and dictionary to house candidate names and  votes, respectively. And then the same exact variables for county names and votes. Then we have variables created to serve for the winning candidate name, the winning candidate's votes, and the winning candidate's vote percentage. Finally, we have the same again for the counties - variables for the "winning" county with the largest turnout, the total votes received by that county, and the percentage of votes that county received. 
 
+   We also have code in place to begin the county and candidate vote incrementing: 
 
+   ![](Resources/cand_county_incrementing.png)
 
-B2. Of the total votes, 306,055 were cast in Denver County (82.8%), followed by 38,855 in Jefferson County (10.5%), and then 24,801 in Arapahoe County (6.7%)   
+- Of the total votes, 306,055 were cast in Denver County (82.8%), followed by 38,855 in Jefferson County (10.5%), and then 24,801 in Arapahoe County (6.7%)   
 
-[COUNTY CALC]
+   ![](Resources/county_calc.png)
 
-B3. Denver county had the largest number of votes. 
+- Denver county had the largest number of votes. 
 
-B4. Diana DeGette received 272,892 votes (73.8%), followed by Charles Casper Stockham with 85,213 votes (23.0%), and finally by Raymon Anthony Doane with 11,606 votes (3.1%).
+- Diana DeGette received 272,892 votes (73.8%), followed by Charles Casper Stockham with 85,213 votes (23.0%), and finally by Raymon Anthony Doane with 11,606 votes (3.1%).
 
-[CAND CALC]
+   ![](Resources/cand_calc.png)
 
-B5. Diana DeGette won the election with 262,892 votes received at 73.8% of the votes cast. 
+- Diana DeGette won the election with 262,892 votes received at 73.8% of the votes cast. 
 
 
 
@@ -45,14 +51,14 @@ Thank you for taking the time to consider our proposal. In our current climate, 
 
 If the script is still pulling its raw election data from a CSV file, then staff will need to ensure that the script is still pulling from the correct file location:
 
-
+![](Resources/comm_mod_path.png)
 
 This area of the code tells the script where to open the file, as well as where to create the file that will contain our election results. All that needs to be completed here with each election is ensuring that our locations for the source CSV file and the output TXT files are correctly entered. 
 
 
 A second potential consideration/modification is ensuring that the data in the file for Candidate and County locations remain the same as noted in the below code:
 
-
+![](Resources/comm_mod_row.png)
 
 If their locations have changed (i.e., County data is no longer in the CSV file’s second column and Candidate data is no longer in the CSV file’s third column), then the row indices shown here will need to be modified for the script to function properly. 
 
